@@ -13,11 +13,11 @@ function App() {
     <div className="container-fluid">
       <div className="row min-vh-100 bg-dark">
         <div className="stats-width">
-          <div className="row header-height">
-            <div className="col-5 text-white text-center border border-success">
+          <div className="row header-height center-vh">
+            <div className="col-5 text-white text-center border border-success fs-3">
               CLASS
             </div>
-            <div className="col-7 text-white text-center border border-success">
+            <div className="col-7 text-white text-center border border-success fs-4">
               PROFILE SELECTOR
             </div>
           </div>

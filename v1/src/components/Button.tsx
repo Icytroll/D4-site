@@ -7,7 +7,7 @@ interface Props {
 const Button = ({ children, onClick, color = "primary" }: Props) => {
   return (
     <button
-      className={"h-100 w-100 rounded-0 btn btn-" + color}
+      className={"h-100 w-100 fs-3 rounded-0 btn btn-" + color}
       onClick={onClick}
     >
       {children}

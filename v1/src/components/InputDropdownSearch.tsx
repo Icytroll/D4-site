@@ -2,7 +2,7 @@ interface Props {
   children: string;
 }
 
-const Input = ({ children }: Props) => {
+const InputDropdownSearch = ({ children }: Props) => {
   return (
     <div>
       <input
@@ -13,4 +13,4 @@ const Input = ({ children }: Props) => {
   );
 };
 
-export default Input;
+export default InputDropdownSearch;

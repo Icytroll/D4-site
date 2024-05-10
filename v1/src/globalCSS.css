@@ -20,3 +20,9 @@
 .header-buttons {
   background-color: var(--header-selected);
 }
+.item-box-width {
+  width: 22%
+}
+.item-box-height {
+  height: 32%
+}

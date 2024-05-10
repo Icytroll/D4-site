@@ -1,4 +1,3 @@
-import Input from "./Input";
 import ItemEntryRow from "./ItemEntryRow";
 
 interface Props {
@@ -7,8 +6,8 @@ interface Props {
 
 const Item = ({ itemSlot }: Props) => {
   return (
-    <div className="border border-secondary">
-      <div className="row center-vh fs-4 ">{itemSlot}</div>
+    <div className="border border-primary p-0">
+      <div className="row center-vh fs-4">{itemSlot}</div>
       <ItemEntryRow />
       <ItemEntryRow />
       <ItemEntryRow />
