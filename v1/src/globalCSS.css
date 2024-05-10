@@ -1,0 +1,22 @@
+* {
+  --stats-width: 450px;
+  --header-height: 80px;
+  --header-selected: #555;
+}
+
+.header-height {
+  height: var(--header-height);
+}
+.stats-height {
+  height: calc(100vh - var(--header-height));
+}
+.stats-width {
+  width: var(--stats-width);
+}
+.center-vh {
+  justify-content: center;
+  align-items: center; 
+}
+.header-buttons {
+  background-color: var(--header-selected);
+}
