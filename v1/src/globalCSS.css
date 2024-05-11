@@ -7,9 +7,6 @@
 .header-height {
   height: var(--header-height);
 }
-.stats-height {
-  height: calc(100vh - var(--header-height));
-}
 .stats-width {
   width: var(--stats-width);
 }
@@ -17,14 +14,16 @@
   justify-content: center;
   align-items: center; 
 }
+
+.main-view-tab {
+  width: 200px;
+}
+
 .header-buttons {
   background-color: var(--header-selected);
 }
-.item-box-width {
-  width: 22%
-}
-.item-box-height {
-  height: 32%
+.item {
+  max-width: 250px;
 }
 .input-y-padding {
   padding-top: 2px;
