@@ -17,18 +17,21 @@
   justify-content: center;
   align-items: center; 
 }
+.main-view-tab {
+  width: 200px;
+}
 .header-buttons {
   background-color: var(--header-selected);
 }
-.item-box-width {
-  width: 22%
+.item {
+  max-width: 320px;
 }
-.item-box-height {
-  height: 32%
+.item-row-fs {
+  font-size: 14px;
 }
 .input-y-padding {
   padding-top: 2px;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 /* Firefox */
 input[type=number] {

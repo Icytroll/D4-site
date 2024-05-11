@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import Button from "./components/Button";
-import ItemsContainer from "./components/ItemsContainer";
+import ItemsContainer from "./components/Items/ItemsContainer";
 import SkillsContainer from "./components/SkillsContainer";
 import ParagonContainer from "./components/ParagonContainer";
 
+// vvvv this is black magic
+type TabType = "items" | "skills" | "paragon";
+
+const tabs: Array<{ type: TabType; label: string }> = [
+  { type: "items", label: "Items" },
+  { type: "skills", label: "Skills" },
+  { type: "paragon", label: "Paragon" },
+];
+
+const tabContainers: Record<TabType, FC> = {
+  items: ItemsContainer,
+  skills: SkillsContainer,
+  paragon: ParagonContainer,
+};
+// ^^^^ this is black magic
+
 function App() {
-  const [itemsWindowVisible, setItemsWindowVisibility] = useState(true);
-  const [skillsWindowVisible, setSkillsWindowVisibility] = useState(false);
-  const [paragonWindowVisible, setParagonWindowVisibility] = useState(false);
+  // vvvv this is black magic
+  const [visibleTab, setVisibleTab] = useState<TabType>("items");
+  const TabContainer = tabContainers[visibleTab];
+  // ^^^^ this is black magic
 
   return (
     <div className="container-fluid">
@@ -21,51 +38,31 @@ function App() {
               PROFILE SELECTOR
             </div>
           </div>
-          <div className="row stats-height center-vh border border-light text-white">
+          <div className="row center-vh border border-light text-white">
             STATS CONTAINER
           </div>
         </div>
 
         <div className="col justify-content-center flex-grow-1">
           <div className="row header-height">
-            <div className="col-2 text-white bg-dark border border-success p-0">
-              <Button
-                children="ITEMS"
-                onClick={() => {
-                  setItemsWindowVisibility(true);
-                  setSkillsWindowVisibility(false);
-                  setParagonWindowVisibility(false);
-                }}
-                color="dark"
-              />
-            </div>
-            <div className="col-2 text-white bg-dark border border-success p-0">
-              <Button
-                children="SKILLS"
-                onClick={() => {
-                  setItemsWindowVisibility(false);
-                  setSkillsWindowVisibility(true);
-                  setParagonWindowVisibility(false);
-                }}
-                color="dark"
-              />
-            </div>
-            <div className="col-2 text-white bg-dark border border-success p-0">
-              <Button
-                children="PARAGON"
-                onClick={() => {
-                  setItemsWindowVisibility(false);
-                  setSkillsWindowVisibility(false);
-                  setParagonWindowVisibility(true);
-                }}
-                color="dark"
-              />
-            </div>
+            {tabs.map((tab) => (
+              <div
+                key={tab.type}
+                className="main-view-tab text-white bg-dark border border-success g-0"
+              >
+                <Button
+                  onClick={() => {
+                    setVisibleTab(tab.type);
+                  }}
+                  color="dark"
+                >
+                  {tab.label}
+                </Button>
+              </div>
+            ))}
           </div>
-          <div className="row stats-height center-vh border border-light text-white">
-            {itemsWindowVisible && <ItemsContainer />}
-            {skillsWindowVisible && <SkillsContainer />}
-            {paragonWindowVisible && <ParagonContainer />}
+          <div className="row center-vh border border-light text-white">
+            <TabContainer />
           </div>
         </div>
       </div>

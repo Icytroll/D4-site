@@ -6,7 +6,7 @@ const InputDropdownSearch = ({ children }: Props) => {
   return (
     <div>
       <input
-        className="bg-primary bg-opacity-10 text-white border border-0 w-100"
+        className="bg-primary bg-opacity-25 text-white border border-0 w-100"
         placeholder={children}
       ></input>
     </div>
