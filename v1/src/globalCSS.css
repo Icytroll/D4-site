@@ -3,11 +3,17 @@
   --header-height: 80px;
   --header-selected: #555;
 }
-
+.ul-todo {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.bold {
+  font-weight: 900;
+}
 .header-height {
   height: var(--header-height);
 }
-.stats-height {
+.statsHeight {
   height: calc(100vh - var(--header-height));
 }
 .stats-width {

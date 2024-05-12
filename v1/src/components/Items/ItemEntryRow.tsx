@@ -10,7 +10,7 @@ const Item = ({ placeHolderStr = "Placeholder" }: Props) => {
   return (
     <div className="row item-row-fs input-y-padding g-0 gx-1">
       <div className="col-8">
-        <InputDropdownSearch children={placeHolderStr} />
+        <InputDropdownSearch children={placeHolderStr + " ..."} />
       </div>
       <div className="col-4 text-center">
         <Input children="Value" />

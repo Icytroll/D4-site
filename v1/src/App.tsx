@@ -1,19 +1,23 @@
 import { FC, useState } from "react";
 import Button from "./components/Button";
+import MiscContainer from "./components/Miscellaneous/MiscContainer";
 import ItemsContainer from "./components/Items/ItemsContainer";
-import SkillsContainer from "./components/SkillsContainer";
-import ParagonContainer from "./components/ParagonContainer";
+import SkillsContainer from "./components/Skills/SkillsContainer";
+import ParagonContainer from "./components/Paragon/ParagonContainer";
+import StatsContainer from "./components/Stats/StatsContainer";
 
 // vvvv this is black magic
-type TabType = "items" | "skills" | "paragon";
+type TabType = "setupMisc" | "items" | "skills" | "paragon";
 
 const tabs: Array<{ type: TabType; label: string }> = [
+  { type: "setupMisc", label: "Setup/Misc" },
   { type: "items", label: "Items" },
   { type: "skills", label: "Skills" },
   { type: "paragon", label: "Paragon" },
 ];
 
 const tabContainers: Record<TabType, FC> = {
+  setupMisc: MiscContainer,
   items: ItemsContainer,
   skills: SkillsContainer,
   paragon: ParagonContainer,
@@ -38,9 +42,7 @@ function App() {
               PROFILE SELECTOR
             </div>
           </div>
-          <div className="row center-vh border border-light text-white">
-            STATS CONTAINER
-          </div>
+          <StatsContainer />
         </div>
 
         <div className="col justify-content-center flex-grow-1">

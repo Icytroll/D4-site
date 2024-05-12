@@ -25,7 +25,7 @@ const Item = ({ itemSlot }: Props) => {
       <div className="row center-vh fs-5">{itemSlot}</div>
       <ItemTypeRow
         innateStatLabel={
-          isWeapon ? "Weapon DPS" : isArmor ? "Armor" : "Resistance to All"
+          isWeapon ? "Weapon DMG" : isArmor ? "Armor" : "Resistance to All"
         }
       />
       {isJewelry ? (
