@@ -1,10 +1,10 @@
 const TodoContainer = () => {
   return (
     <div className="w-50">
-      <h1>TO-DO LIST</h1>
+      <h1 className="my-3">TO-DO LIST</h1>
       <ul>
         <li>
-          <h5 className="bold">Profile Selector</h5>
+          <h5 className="bold my-2">Profile Selector</h5>
           <ul>
             <li>
               Ideally I'd like to have an overarching profile system, in which
@@ -18,13 +18,13 @@ const TodoContainer = () => {
           </ul>
         </li>
         <li>
-          <h5 className="bold">The Calculator</h5>
+          <h5 className="bold my-2">The Calculator</h5>
           <ul>
             <li>how though</li>
           </ul>
         </li>
         <li>
-          <h5 className="bold">Stats container</h5>
+          <h5 className="bold my-2">Stats container</h5>
           <ul>
             <li>
               Add a DMG/DPS element that can change depending on what skill is
@@ -42,7 +42,7 @@ const TodoContainer = () => {
           be tracked by the calculator
         </li>
         <li>
-          <h5 className="bold">Setup/Misc</h5>
+          <h5 className="bold my-2">Setup/Misc</h5>
           <ul>
             <li>
               Add checkmarks for each conditional for the character and a
@@ -68,10 +68,14 @@ const TodoContainer = () => {
                 <li>Is the target slowed?</li>
               </ul>
             </li>
+            <li>
+              Add checkmarks for aspects/unique effects from the item
+              sub-profile that is linked to the current profile
+            </li>
           </ul>
         </li>
         <li>
-          <h5 className="bold">Items</h5>
+          <h5 className="bold my-2">Items</h5>
           <ul>
             <li>
               Add drop-down options specific to each item stat, can't pick the
@@ -92,7 +96,7 @@ const TodoContainer = () => {
           </ul>
         </li>
         <li>
-          <h5 className="bold">Skills/Techniques</h5>
+          <h5 className="bold my-2">Skills/Techniques</h5>
           <ul>
             <li>Add skills</li>
             <li>Add technique slots</li>
@@ -100,7 +104,7 @@ const TodoContainer = () => {
           </ul>
         </li>
         <li>
-          <h5 className="bold">Paragon</h5>
+          <h5 className="bold my-2">Paragon</h5>
           <ul>
             <li>
               Add a canvas to the Paragon tab that can be moved and zoomed
@@ -110,26 +114,13 @@ const TodoContainer = () => {
           </ul>
         </li>
         <li>
-          <h5 className="bold">
-            Overflow test, should not extend the entire page, just make the
-            container fill the remaining page height then become scrollable
-          </h5>
+          <h5 className="bold my-2">General stuff</h5>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              I don't want the page itself to be scrollable, the stats container
+              and misc/item/skill etc containers themselves can be scrollable
+              though, fix it
+            </li>
           </ul>
         </li>
       </ul>
