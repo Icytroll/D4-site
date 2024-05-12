@@ -5,15 +5,17 @@ import ItemsContainer from "./components/Items/ItemsContainer";
 import SkillsContainer from "./components/Skills/SkillsContainer";
 import ParagonContainer from "./components/Paragon/ParagonContainer";
 import StatsContainer from "./components/Stats/StatsContainer";
+import TodoContainer from "./components/Todo";
 
 // vvvv this is black magic
-type TabType = "setupMisc" | "items" | "skills" | "paragon";
+type TabType = "setupMisc" | "items" | "skills" | "paragon" | "todo";
 
 const tabs: Array<{ type: TabType; label: string }> = [
   { type: "setupMisc", label: "Setup/Misc" },
   { type: "items", label: "Items" },
   { type: "skills", label: "Skills" },
   { type: "paragon", label: "Paragon" },
+  { type: "todo", label: "Todo" },
 ];
 
 const tabContainers: Record<TabType, FC> = {
@@ -21,6 +23,7 @@ const tabContainers: Record<TabType, FC> = {
   items: ItemsContainer,
   skills: SkillsContainer,
   paragon: ParagonContainer,
+  todo: TodoContainer,
 };
 // ^^^^ this is black magic
 

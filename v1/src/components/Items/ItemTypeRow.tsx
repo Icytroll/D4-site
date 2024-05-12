@@ -8,12 +8,12 @@ interface Props {
 const Item = ({ innateStatLabel }: Props) => {
   return (
     <div className="row item-row-fs input-y-padding g-0 gx-1">
-      <div className="col-8">
+      <div className="col-9">
         <div className="bg-primary bg-opacity-10 text-white border-bottom border-top border-primary border-opacity-10 w-100">
           {innateStatLabel}
         </div>
       </div>
-      <div className="col-4 text-center">
+      <div className="col-3 text-center">
         <Input children="Value" />
       </div>
     </div>
