@@ -1,7 +1,9 @@
+import structure from "./componentStructure.png";
+
 const TodoContainer = () => {
   return (
-    <div className="w-50">
-      <h1 className="my-3">TO-DO LIST</h1>
+    <div className="" style={{ width: "900px" }}>
+      <h1 className="my-3 text-primary">TO-DO LIST / OBJECTIVES / WISH-LIST</h1>
       <ul>
         <li>
           <h5 className="bold my-2">Profile Selector</h5>
@@ -23,13 +25,19 @@ const TodoContainer = () => {
               Each profile will then have a summation of stats with the sets
               that are linked to it
             </li>
+            <img
+              className="my-3"
+              style={{ width: "700px" }}
+              src={structure}
+              alt="simulator data structure"
+            />
           </ul>
         </li>
         <li>
-          <h5 className="bold my-2">The Calculator</h5>
+          <h5 className="bold my-2">The Simulator</h5>
           <ul>
             <li>
-              The calculator will be responsible for:
+              The simulator will be responsible for:
               <ul>
                 <li>
                   Using the summed up stats and setup options of the current
