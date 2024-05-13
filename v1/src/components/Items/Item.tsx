@@ -30,10 +30,8 @@ const Item = ({ itemSlot }: Props) => {
       />
       {isJewelry ? (
         <ItemEntryRow placeHolderStr="Resistance" />
-      ) : isWeapon ? (
-        <ItemEntryRow placeHolderStr="Implicit stat" />
       ) : (
-        ""
+        isWeapon && <ItemEntryRow placeHolderStr="Implicit stat" />
       )}
       <ItemEntryRow placeHolderStr="Affix I" />
       <ItemEntryRow placeHolderStr="Affix II" />
@@ -43,10 +41,8 @@ const Item = ({ itemSlot }: Props) => {
       <ItemEntryRow placeHolderStr="Aspect" />
       {isSingleGem ? (
         <ItemEntryRow placeHolderStr="Gem" />
-      ) : isDoubleGem ? (
-        <ItemEntryRow placeHolderStr="Gems" />
       ) : (
-        ""
+        isDoubleGem && <ItemEntryRow placeHolderStr="Gems" />
       )}
     </div>
   );

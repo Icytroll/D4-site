@@ -9,18 +9,38 @@ const TodoContainer = () => {
             <li>
               Ideally I'd like to have an overarching profile system, in which
               each individual profile can select between different
-              Setup/Item/Skill/Paragon profiles. So I can create a "Rend
-              Endgame" profile via the Profile Selector Tab, where I can then
-              choose between two premade Item profiles "Lots of Berserking dmg"
-              or "Rend range + Grandfather", and so on for the other inputs. So
-              kind of "build your own profile using sub-profiles"
+              Setup/Item/Skill/Paragon sets. So I can create a "Rend Endgame"
+              profile via the Profile Selector Tab, where I can then choose
+              between two premade Item sets "Lots of Berserking dmg" or "Rend
+              range + Grandfather", and so on for the other inputs. So kind of
+              "build your own profile using sets of sub-profiles"
+            </li>
+            <li>
+              Each individual set will contain a summation of all stats within
+              itself
+            </li>
+            <li>
+              Each profile will then have a summation of stats with the sets
+              that are linked to it
             </li>
           </ul>
         </li>
         <li>
           <h5 className="bold my-2">The Calculator</h5>
           <ul>
-            <li>how though</li>
+            <li>
+              The calculator will be responsible for:
+              <ul>
+                <li>
+                  Using the summed up stats and setup options of the current
+                  profile to calculate dmg of a selected skill as well as EHP
+                </li>
+                <li>
+                  Displaying the results and summed up stats in the stats
+                  container
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>
@@ -36,10 +56,6 @@ const TodoContainer = () => {
             </li>
             <li>Below those two, add every other stat in an ordered list</li>
           </ul>
-        </li>
-        <li>
-          Everything in the Setup/Misc, Items, Skills and Paragon tabs needs to
-          be tracked by the calculator
         </li>
         <li>
           <h5 className="bold my-2">Setup/Misc</h5>
@@ -115,13 +131,7 @@ const TodoContainer = () => {
         </li>
         <li>
           <h5 className="bold my-2">General stuff</h5>
-          <ul>
-            <li>
-              I don't want the page itself to be scrollable, the stats container
-              and misc/item/skill etc containers themselves can be scrollable
-              though, fix it
-            </li>
-          </ul>
+          <ul></ul>
         </li>
       </ul>
     </div>

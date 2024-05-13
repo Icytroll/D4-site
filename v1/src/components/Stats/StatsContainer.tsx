@@ -1,7 +1,8 @@
 const StatsContainer = () => {
   return (
-    <div className="row center-vh border border-light text-white">
+    <div className="text-center">
       STATS CONTAINER
+      <div></div>
     </div>
   );
 };
