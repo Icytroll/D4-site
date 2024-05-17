@@ -1,24 +1,56 @@
+import { Fragment } from "react/jsx-runtime";
+import {
+  weaponAffixStats,
+  otherAffixStats,
+  weaponTemperStats,
+  glovesAffixStats,
+} from "./Items/itemStats";
+import { Slot } from "./Items/slots";
+import { weaponSlots } from "./Items/slots";
+
 interface Props {
-  children: string;
+  placeHolder: string;
+  itemSlot: Slot;
 }
 
-const InputDropdownSearch = ({ children }: Props) => {
+const InputDropdownSearch = ({ placeHolder, itemSlot }: Props) => {
+  const isGloves = itemSlot === "Gloves";
+  const isWeapon = weaponSlots.includes(itemSlot);
+  const isAffix = placeHolder.includes("Affix");
+  const isTempering = placeHolder.includes("Tempering");
+
+  const statOptions = isWeapon
+    ? isAffix
+      ? weaponAffixStats
+      : isTempering
+      ? weaponTemperStats
+      : otherAffixStats
+    : isGloves
+    ? isAffix
+      ? glovesAffixStats
+      : otherAffixStats
+    : otherAffixStats;
+  const listID = isWeapon
+    ? isAffix
+      ? itemSlot.concat("Affix")
+      : isTempering
+      ? itemSlot.concat("Tempering")
+      : itemSlot
+    : itemSlot;
+
   return (
-    <div>
+    <Fragment>
+      <datalist id={listID}>
+        {statOptions.map((stat) => (
+          <option value={stat} />
+        ))}
+      </datalist>
       <input
         className="bg-primary bg-opacity-25 text-white border border-0 w-100"
-        placeholder={children}
-        list="browser"
+        placeholder={placeHolder + " ..."}
+        list={listID}
       ></input>
-      <datalist id="browser">
-        <option value="Chrome" />
-        <option value="Firefox" />
-        <option value="Internet Explorer" />
-        <option value="Opera" />
-        <option value="Safari" />
-        <option value="Microsoft Edge" />
-      </datalist>
-    </div>
+    </Fragment>
   );
 };
 

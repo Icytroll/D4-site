@@ -6,8 +6,8 @@ import SkillsContainer from "./Skills/SkillsContainer";
 import ParagonContainer from "./Paragon/ParagonContainer";
 import StatsContainer from "./Stats/StatsContainer";
 import TodoContainer from "./Todo";
+import { itemSlots } from "./Items/slots";
 
-// vvvv this is black magic
 type TabType = "setupMisc" | "items" | "skills" | "paragon" | "todo";
 
 const tabs: Array<{ type: TabType; label: string }> = [
@@ -18,6 +18,7 @@ const tabs: Array<{ type: TabType; label: string }> = [
   { type: "todo", label: "Todo" },
 ];
 
+/*
 const tabContainers: Record<TabType, FC> = {
   setupMisc: MiscContainer,
   items: ItemsContainer,
@@ -25,13 +26,11 @@ const tabContainers: Record<TabType, FC> = {
   paragon: ParagonContainer,
   todo: TodoContainer,
 };
-// ^^^^ this is black magic
+*/
 
 const Simulator = () => {
-  // vvvv this is black magic
   const [visibleTab, setVisibleTab] = useState<TabType>("items");
-  const TabContainer = tabContainers[visibleTab];
-  // ^^^^ this is black magic
+  //const TabContainer = tabContainers[visibleTab];
 
   return (
     <div className="row min-vh-100 bg-dark">
@@ -68,7 +67,17 @@ const Simulator = () => {
           ))}
         </div>
         <div className="row center-vh border border-light text-white scroll-auto">
-          <TabContainer />
+          {visibleTab === "setupMisc" ? (
+            <MiscContainer />
+          ) : visibleTab === "items" ? (
+            <ItemsContainer itemSlots={[...itemSlots]} />
+          ) : visibleTab === "skills" ? (
+            <SkillsContainer />
+          ) : visibleTab === "paragon" ? (
+            <ParagonContainer />
+          ) : (
+            <TodoContainer />
+          )}
         </div>
       </div>
     </div>

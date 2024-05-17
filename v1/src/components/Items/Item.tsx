@@ -29,20 +29,24 @@ const Item = ({ itemSlot }: Props) => {
         }
       />
       {isJewelry ? (
-        <ItemEntryRow placeHolderStr="Resistance" />
+        <ItemEntryRow placeHolderStr="Resistance" itemSlot={itemSlot} />
       ) : (
-        isWeapon && <ItemEntryRow placeHolderStr="Implicit stat" />
+        isWeapon && (
+          <ItemEntryRow placeHolderStr="Implicit stat" itemSlot={itemSlot} />
+        )
       )}
-      <ItemEntryRow placeHolderStr="Affix I" />
-      <ItemEntryRow placeHolderStr="Affix II" />
-      <ItemEntryRow placeHolderStr="Affix III" />
-      <ItemEntryRow placeHolderStr="Tempering I" />
-      <ItemEntryRow placeHolderStr="Tempering II" />
-      <ItemEntryRow placeHolderStr="Aspect" />
+      <ItemEntryRow placeHolderStr="Affix I" itemSlot={itemSlot} />
+      <ItemEntryRow placeHolderStr="Affix II" itemSlot={itemSlot} />
+      <ItemEntryRow placeHolderStr="Affix III" itemSlot={itemSlot} />
+      <ItemEntryRow placeHolderStr="Tempering I" itemSlot={itemSlot} />
+      <ItemEntryRow placeHolderStr="Tempering II" itemSlot={itemSlot} />
+      <ItemEntryRow placeHolderStr="Aspect" itemSlot={itemSlot} />
       {isSingleGem ? (
-        <ItemEntryRow placeHolderStr="Gem" />
+        <ItemEntryRow placeHolderStr="Gem" itemSlot={itemSlot} />
       ) : (
-        isDoubleGem && <ItemEntryRow placeHolderStr="Gems" />
+        isDoubleGem && (
+          <ItemEntryRow placeHolderStr="Gems" itemSlot={itemSlot} />
+        )
       )}
     </div>
   );

@@ -1,7 +1,14 @@
+import { useState } from "react";
 import Item from "./Item";
-import { itemSlots } from "./slots";
+import { Slot } from "./slots";
 
-const ItemsContainer = () => {
+interface Props {
+  itemSlots: Slot[];
+}
+
+const ItemsContainer = ({ itemSlots }: Props) => {
+  const [itemsData, setItemsData] = useState({});
+
   return (
     <div className="w-100 h-100">
       <div className="row justify-content-center flex-wrap column-gap-4 row-gap-2">

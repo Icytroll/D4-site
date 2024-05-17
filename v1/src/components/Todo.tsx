@@ -139,7 +139,17 @@ const TodoContainer = () => {
         </li>
         <li>
           <h5 className="bold my-2">General stuff</h5>
-          <ul></ul>
+          <ul>
+            <li>
+              Figure out how to decrypt D4 data using the hash function found at{" "}
+              <a
+                href="https://github.com/lothrik/diablo4-build-calc"
+                target="_blank"
+              >
+                Lothrik github
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

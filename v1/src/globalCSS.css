@@ -2,6 +2,10 @@
   --stats-width: 450px;
   --header-height: 80px;
   --header-selected: #555;
+  --legendary-color: #521c06;
+  --legendary-color-muted: #301409;
+  --unique-color: #4f391d;
+  --unique-color-muted: #372713;
 }
 body {
   overflow: hidden;
@@ -17,6 +21,18 @@ body {
 }
 .bold {
   font-weight: 900;
+}
+.legendary-item {
+  background-color: var(--legendary-color);
+}
+.legendary-item-muted {
+  background-color: var(--legendary-color-muted);
+}
+.unique-item {
+  background-color: var(--unique-color);
+}
+.unique-item-muted {
+  background-color: var(--unique-color-muted);
 }
 .header-height {
   height: var(--header-height);
